@@ -3,75 +3,96 @@ package s047;
 import java.util.Objects;
 
 public class ParameterPassing {
-    static void primitive(int parameter) {
-        parameter += 1;
-        System.out.println("parameter is " + parameter);
-    }
+	static void primitive(int parameter) {// mi deve passare un intero;
+		parameter += 1;// incrementa parameter diventa 13;
+		System.out.println("parameter is " + parameter);
+	} // finisce blocco come se ci fosse un return ritorna a void main;
 
-    static void immutableReference(String parameter) {
-        if (parameter == null) {
-            System.out.println("Nothing to do here");
-            return;
-        }
+	static int square(int value) {
+		value *= value;// è una copia, l'ho passata by value;
+		System.out.println("Value is " + value);
+		return value;
+	}
 
-        // alternatively: if parameter is null throws a NullPointerException
-        Objects.requireNonNull(parameter, "Parameter should not be null");
+	static int triple(int value) {
+		value*=3;
+		System.out.println("Triple is " + value);
+		return value;
+	}
 
-        System.out.println("parameter id was " + System.identityHashCode(parameter));
-        parameter += " there";
-        System.out.println("Now parameter id is " + System.identityHashCode(parameter));
-        System.out.println("parameter value is " + parameter);
-    }
+	static void immutableReference(String parameter) {
+		if (parameter == null) {
+			System.out.println("Nothing to do here");
+			return;
+		}
 
-    static void reference(StringBuilder parameter) {
-        if (parameter == null) {
-            System.out.println("Nothing to do here");
-            return;
-        }
+		// alternatively: if parameter is null throws a NullPointerException
+		Objects.requireNonNull(parameter, "Parameter should not be null");
 
-        // alternatively: if parameter is null throws a NullPointerException
-        Objects.requireNonNull(parameter, "Parameter should not be null");
+		System.out.println("parameter id was " + System.identityHashCode(parameter));// hashcode indirizzo in memoria del mio oggetto;
+		parameter += " there";// parameter Hi rimane nell'heap;
+		System.out.println("Now parameter id is " + System.identityHashCode(parameter));// cambio la stringa, ovvero cambio il mio reference;
+		System.out.println("parameter value is " + parameter);
+	}
 
-        parameter.append(" there");
-        System.out.println("parameter value is " + parameter);
-    }
+	static void reference(StringBuilder parameter) {
+		if (parameter == null) {
+			System.out.println("Nothing to do here");
+			return;
+		}
 
-    static void reference(int[] data) {
-        if (data == null || data.length == 0) {
-            System.out.println("Nothing to do here");
-            return;
-        }
+		// alternatively: if parameter is null throws a NullPointerException
+		Objects.requireNonNull(parameter, "Parameter should not be null");
 
-        // alternatively: if parameter is null throws a NullPointerException
-        Objects.requireNonNull(data, "Parameter should not be null");
+		parameter.append(" there");
+		System.out.println("parameter value is " + parameter);
+	}
 
-        data[0] += 1;
-        System.out.println("data[0] is " + data[0]);
-    }
+	static void reference(int[] data) {
+		if (data == null | data.length == 0) {// se data non è null allora faccio il check sulla lunghezza di data che non deve essere 0;
+			System.out.println("Nothing to do here");
+			return;
+		}
 
-    public static void main(String[] args) {
-        int primitiveValue = 12;
+		// alternatively: if parameter is null throws a NullPointerException
+		Objects.requireNonNull(data, "Parameter should not be null");
 
-        System.out.println("primitiveValue has been initialized to " + primitiveValue);
-        primitive(primitiveValue);
-        System.out.println("primitiveValue is still " + primitiveValue);
+		data[0] += 1;
+		System.out.println("data[0] is " + data[0]);
+	}
 
-        String string = "Hi";
+	public static void main(String[] args) {
+		int primitiveValue = 12;
 
-        System.out.println("string has been initialized to " + string);
-        immutableReference(string);
-        System.out.println("string is still " + string);
+		System.out.println("primitiveValue has been initialized to " + primitiveValue);
+		primitive(primitiveValue);
 
-        StringBuilder referenceValue = new StringBuilder("Hi");
+		int result = square(primitiveValue);
+		// è un metodo che fa parte di questa classe(quella corrente), fa invocazione a
+		// quel metodo ed esegue blocco relativo a primitive;
+		System.out.println("primitiveValue square is " + result);
 
-        System.out.println("referenceValue has been initialized to " + referenceValue);
-        reference(referenceValue);
-        System.out.println("referenceValue now is " + referenceValue);
+		result = triple(primitiveValue);
+		System.out.println("primitiveValue triped is " + result);
+		
+		System.out.println("primitiveValue is still " + primitiveValue);
+		
+		String string = "Hi";
 
-        int array[] = { 42 };
+		System.out.println("string has been initialized to " + string);
+		immutableReference(string);
+		System.out.println("string is still " + string);
 
-        System.out.println("array[0] is " + array[0]);
-        reference(array);
-        System.out.println("array[0] now is " + array[0]);
-    }
+		StringBuilder referenceValue = new StringBuilder("Hi");
+
+		System.out.println("referenceValue has been initialized to " + referenceValue);
+		reference(referenceValue);
+		System.out.println("referenceValue now is " + referenceValue);// i cambiamenti del reference lo vedono entrambi, i cambiamenti puntano allo stesso oggetto che in questo caso cambia proprio è diventa Hi there;
+
+		int[] array = { 42 };// array non è altro che un reference;
+
+		System.out.println("array[0] is " + array[0]);
+		reference(array);
+		System.out.println("array[0] now is " + array[0]);
+	}
 }
