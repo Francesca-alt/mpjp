@@ -17,9 +17,9 @@ class S57Test {
 
     @Test
     void speedInfinity() {
-        double actual = S57.speed(100, 0);
+        double actual = S57.speed(100, 0);// 100 m in o secondi 
 
-        assertThat(actual, is(Double.POSITIVE_INFINITY));
+        assertThat(actual, is(Double.POSITIVE_INFINITY));// Double(classe) è il trapper di double;
     }
 
     @Test
@@ -27,6 +27,13 @@ class S57Test {
         double actual = S57.distance(1, 10, 2, 9);
 
         assertEquals(actual, Math.sqrt(2), 0.000_001);
+    }
+    
+    @Test
+    void speedplain2() {
+        double actual = S57.speed(100, 2);
+
+        assertEquals(actual, 50.0);
     }
 
     @Test
