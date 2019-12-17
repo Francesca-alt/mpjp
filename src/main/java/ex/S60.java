@@ -9,7 +9,11 @@ public class S60 {
      */
     public static String reverse(String s) {
         // TODO
-        return "";
+    	StringBuilder sb = new StringBuilder ();
+    	for(int i=s.length() -1;i>=0; i--) {
+    		sb.append (s.charAt(i));
+    	}
+        return sb.toString();
     }
 
     /**
@@ -20,7 +24,13 @@ public class S60 {
      */
     public static boolean isPalindrome(String s) {
         // TODO
+    		int len= s.length();	
+    	for (int i=0; i<len/2; i++) {
+    			if(s.charAt(i)!=s.charAt(len -1-i)) {
         return false;
+    			} 
+    }
+    	return true;
     }
 
     /**
@@ -31,7 +41,13 @@ public class S60 {
      */
     public static String removeVowels(String s) {
         // TODO
-        return "";
+    	StringBuilder sb= new StringBuilder ();
+    	for (int i =0; i< s.length();i++) {
+    		char c= s.charAt(i);
+    		if(true)
+    			sb.append(c);
+    	}
+        return sb.toString();
     }
 
     /**

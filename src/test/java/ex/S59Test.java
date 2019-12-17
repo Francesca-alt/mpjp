@@ -14,6 +14,12 @@ class S59Test {
 
         assertThat(actual, is(6L));
     }
+    @Test
+    void sumlog() {
+        long actual = S59.sum(2_000_000_000, 2_000_000_001);
+
+        assertThat(actual, is(4_000_000_001L));
+    }
 
     @Test
     void sumNegPos() {
