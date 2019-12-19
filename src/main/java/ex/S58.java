@@ -72,14 +72,22 @@ public class S58 {
 	 * @param percentile in [0, 100]
 	 * @return a letter in [A, F]
 	 */
-	public static char vote(double percentile) {
+	//public static char vote(double percentile) {
 		// TODO
-		if (percentile <= 50) {
-			return 'F';
-		} else if (percentile > 90) {
-			return 'A';
-		}
-	}
+//		if (percentile > 90) {
+//			return 'A';
+//		} else if (percentile > 80) {
+//			return 'B';
+//		} else if (percentile > 70) {
+//			return 'C';
+//		} else if (percentile > 60) {
+//			return 'D';
+//		} else if (percentile > 50) {
+//			return 'E';
+//		} else if (percentile <= 50) {
+//			return 'F';
+//		}
+//	}
 
 	/**
 	 * Leap year checker
@@ -89,8 +97,15 @@ public class S58 {
 	 */
 	public static boolean isLeapYear(int year) {
 		// TODO
-		return false;
+		if (year % 400 == 0) { // year è divisibile per 400 quindi è leap year;
+			return true;
+		} else if (year % 4 == 0 && year % 100 != 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
+}
 
 	/**
 	 * Sort the input parameters
@@ -100,11 +115,28 @@ public class S58 {
 	 * @param c
 	 * @return a sorted array
 	 */
-	public static int[] sort(int a, int b, int c) {
-		int[] result = new int[3];
-
-		// TODO
-
-		return result;
-	}
-}
+//	public static int[] sort(int a, int b, int c) {
+//		int[] result = new int[3];
+//		if (a < b) {
+//			if(c<a)
+//		    result[0] = c;
+//			result[1] = a;
+//			result[2]=b;
+//		} else if (c>b){
+//			result[0] = a;
+//			result[1] = b;
+//			result[2]= c;
+//		} else if (a>b)
+//			if (c>a)
+//				result[0]=
+//				result[1]=
+//				result[2]=
+//				else if(c>b)
+//					result
+//
+//
+//		// TODO
+//
+//		return result;
+//	}
+//}

@@ -7,7 +7,7 @@ public class Tail {
         this.size = size;
     }
 
-    public int getSize() {
+    public int getSize() {// sapere quanto è lunga la coda del mio gatto; non posso modificarla; 
         return size;
     }
 
