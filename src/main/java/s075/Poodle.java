@@ -5,7 +5,7 @@ public class Poodle extends Dog {
 	private int curlDensity;
 	
 	public Poodle() {
-		super();
+		super();// chiamo il costruttore di default del Dog;
 		this.curlDensity = DEFAULT_DENSITY;
 	}
 
@@ -13,12 +13,12 @@ public class Poodle extends Dog {
 		super(name);
 	}
 
-	public Poodle(String name, int weight) {
+	public Poodle(String name, int weight) {// utente vuole nome e peso;
 		this(name, weight, DEFAULT_DENSITY);
 	}
 
 	public Poodle(String name, int weight, int curlDensity) {
-		super(name, weight);
+		super(name, weight);// fammi il DOG; 
 		this.curlDensity = curlDensity;
 	}
 	
@@ -28,7 +28,7 @@ public class Poodle extends Dog {
 	}
 	
 	@Override
-	public String toString() {
+	public String toString() {// chiamo toString del Dog; è necessario scivere super altrimenti faccio loop infinito.
 		return "Poodle " + super.toString() + " " + curlDensity;
 	}
 }
