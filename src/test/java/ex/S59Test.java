@@ -89,8 +89,8 @@ class S59Test {
         fail("Not yet implemented");
     }
 
-    @Test
-    void multiplicationTable() {
-        fail("Not yet implemented");
-    }
+//    @Test
+//    void multiplicationTable() {
+//        fail("Not yet implemented");
+//    }
 }
