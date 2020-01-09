@@ -18,6 +18,6 @@ class SimpleTest {
 			assertThat(message, is("Can't negate MIN_VALUE"));
 			return;
 		}
-		fail("An IllegalArgumentException was expected");
+		fail("An IllegalArgumentException was expected");// fallisce poichè io mi aspetto che ci sia un eccezione;
 	}
 }
