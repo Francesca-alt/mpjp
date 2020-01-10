@@ -22,10 +22,10 @@ public class JUL {
         Locale.setDefault(new Locale("en", "EN"));
         Logger log = Logger.getLogger("sample");
 
-        someLog();
+        someLog();// ho chiamato someLog senza specificare il livello; se non configuro stampo da info in sù;
 
         ConsoleHandler handler = new ConsoleHandler();
-        handler.setLevel(Level.ALL);
+        handler.setLevel(Level.ALL);// stampa tutti i messaggi: level all;
         log.setLevel(Level.ALL);
         log.addHandler(handler);
         log.setUseParentHandlers(false);
