@@ -88,7 +88,7 @@ insert into JOBS (JOB_ID,JOB_TITLE,MIN_SALARY,MAX_SALARY) values ('PR_REP','Publ
 drop table if exists locations;
 
 create table LOCATIONS(
-	LOCATION_ID decimal(4,0)
+	LOCATION_ID decimal(4,0) 
 		primary key, 
 	STREET_ADDRESS varchar(40), 
 	POSTAL_CODE varchar(12), 
