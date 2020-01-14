@@ -2,7 +2,7 @@
 show tables;
 
 -- all tables
-select table_name
+select table_nameemployees
 from information_schema.tables;
 
 -- all tables for a give schema (aka database)

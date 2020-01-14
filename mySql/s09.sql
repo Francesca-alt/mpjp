@@ -6,10 +6,10 @@ from regions
 where region_id = 1;
 
 -- select all
-select * from regions;
+select * from regions; -- * stiamo parlando di tutte le colonne, se metti where parli di righe;
 
 -- select distinct
-select distinct manager_id
+select distinct MANAGER_ID
 from employees;
 
 -- select with change on results
@@ -21,9 +21,9 @@ select job_title, min_salary as original, min_salary salary from jobs;
 select job_title, min_salary + 2000 "increased min salary" from jobs;
 
 -- dual
-select current_date from dual;
+select current_date from dual; -- current date tabella di sistema fittizia.
 select 1+2, 3-4, 2*6, 5/2, current_date;
 
 -- concatenation
-select concat(country_id, "...", region_id, '!' )
+select concat(country_id, "...", region_id, '!' ) as X
 from countries;
