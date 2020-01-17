@@ -12,7 +12,7 @@ begin
 	declare repeat_message varchar(20) default "i: ";
 	declare v_c varchar(20);
 
-	-- plain loop
+	-- plain loop semplice
 	set v_i = 1;
 	my_loop : loop
 		set loop_message = concat(loop_message, ' ', v_i);
@@ -29,7 +29,7 @@ begin
         set v_i = v_i + 1;
     end while;
 
-	-- loop repeat until
+	-- loop repeat until è un do while (almeno una volta esegue il blocco associato)
 	set v_i = 1;
 	repeat
 		set repeat_message = concat(repeat_message, ' ', v_i);

@@ -16,7 +16,7 @@ select date_add(curdate(), interval 7 day);
 -- subtract an interval to date
 select date_sub(curdate(), interval 7 day);
 
--- extract a component from a date(-time)
+-- extract a component from a date(-time) 
 select extract(day from curdate()), extract(year from now());
 
 -- distance in days between two dates

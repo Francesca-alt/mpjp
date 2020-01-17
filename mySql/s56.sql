@@ -7,6 +7,10 @@ alter table items drop column counter;
 -- add check
 alter table items add constraint items_status_ck check(status in ('A', 'B', 'X'));
 
+select *
+from information_schema.table_constraints
+where constraint_schema = 'me' and table_name= 'items';
+
 -- add unique
 alter table coders add constraint coders_name_uq unique(first_name, last_name);
 

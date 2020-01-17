@@ -1,5 +1,5 @@
 -- left and right padding
-select lpad('tom', 30, '.') tom, rpad('tim', 30, '_- -_') tim;
+select lpad('tom', 30, '.') tom, rpad('tim', 30, '_- -_') tim; -- massimo totale di 30.
 
 -- left, right, both trim
 select ltrim(' Hi!') "left", concat('[', rtrim('Hi! '), ']') "right", concat('[', trim('  Hi! '), ']') "both";
